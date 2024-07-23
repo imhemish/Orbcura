@@ -31,6 +31,11 @@ features outside the allowed domains.
  Google Cloud and Google Text to speech API's for voice and text features.<br/>
  Gemini API for providing descriptions of images and summarization of messages<br/>
 
+### User Flow
 ![user flow](https://github.com/user-attachments/assets/97615a9c-1b51-4d30-8ca6-6b6db58fde7f)
+
+### Architecture Diagram
+![Orbcura Flutter App](https://github.com/user-attachments/assets/124281cc-e912-47fa-8d5e-450a2eb17a6f)
+
 
 ---- we are currently building thia idea. So kindly share you feedback if this idea finds you helpful !!
