@@ -20,7 +20,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
     _controller.addListener(() {
       if (_controller.value.position == _controller.value.duration) {
-        Navigator.of(context).pushReplacementNamed('/home'); // Navigate to home screen
+        Navigator.of(context)
+            .pushReplacementNamed('/splash_nav'); // Navigate to home screen
       }
     });
   }
