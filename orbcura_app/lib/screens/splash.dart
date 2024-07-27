@@ -1,38 +1,50 @@
 import 'package:flutter/material.dart';
-class splashscreen extends StatelessWidget {
+import 'package:video_player/video_player.dart';
+
+class SplashScreen extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Main Screen'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HiScreen()),
-            );
-          },
-          child: Text('Go to Hi Screen'),
-        ),
-      ),
-    );
-  }
+  _SplashScreenState createState() => _SplashScreenState();
 }
 
-class HiScreen extends StatelessWidget {
+class _SplashScreenState extends State<SplashScreen> {
+  late VideoPlayerController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.asset('assets/splash_video.mp4')
+      ..initialize().then((_) {
+        setState(() {});
+        _controller.play();
+      });
+
+    _controller.addListener(() {
+      if (_controller.value.position == _controller.value.duration) {
+        Navigator.of(context)
+            .pushReplacementNamed('/splash_nav'); // Navigate to home screen
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Hi Screen'),
-      ),
-      body: Center(
-        child: Text(
-          'Hi',
-          style: TextStyle(fontSize: 24),
-        ),
+      body: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          _controller.value.isInitialized
+              ? AspectRatio(
+                  aspectRatio: _controller.value.aspectRatio,
+                  child: VideoPlayer(_controller),
+                )
+              : Center(child: CircularProgressIndicator()),
+        ],
       ),
     );
   }
