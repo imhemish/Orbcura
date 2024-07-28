@@ -7,4 +7,5 @@ class AppColors {
       Color.fromARGB(255, 237, 237, 237); // Change to your secondary color
   static Color grey = Colors.grey.shade600;
   static Color border = Color(0xC6C6C6FF);
+  static Color fontColour = Color(0xff434343);
 }

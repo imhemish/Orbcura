@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:orbcura_app/utils/colors.dart';
 
-const borderRadius = Radius.circular(26);
-const double primaryPadding = 20;
-const double secondaryPadding = 15;
+const borderRadius = Radius.circular(20);
+const double primaryPadding = 15;
+const double secondaryPadding = 12;
 const double borderWidth = 3;
 
 class CornerChild {
@@ -47,8 +47,8 @@ class FourCornerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xeeeeeeff),
-      body: Expanded(
-        child: Stack(
+      body: 
+        Stack(
           children: [
             content,
             Positioned(left: 0, top:0, child: CornerSquare(
@@ -58,7 +58,6 @@ class FourCornerScreen extends StatelessWidget {
             Positioned(bottom: 0, right: 0,child: CornerSquare(BorderRadius.only(topLeft: borderRadius), EdgeInsets.only(top: primaryPadding, left: primaryPadding, bottom: secondaryPadding, right: secondaryPadding), Border(top: BorderSide(color: AppColors.border, width: borderWidth), left: BorderSide(color: AppColors.border, width: borderWidth)),bottomRight)),
           ],
         ),
-      ),
     );
   }
 }
