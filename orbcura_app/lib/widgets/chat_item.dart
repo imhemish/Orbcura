@@ -7,12 +7,21 @@ class ChatItem extends StatelessWidget {
   final String name;
   final String message;
   final String time;
+  final TextStyle? nameStyle;
+  final TextStyle? messageStyle;
+  final TextStyle? timeStyle;
+  final TextStyle? initialsStyle;
+
 
   const ChatItem({
     required this.initials,
     required this.name,
     required this.message,
     required this.time,
+    this.initialsStyle,
+    this.nameStyle,
+    this.messageStyle,
+    this.timeStyle,
   });
 
   @override
@@ -26,7 +35,7 @@ class ChatItem extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: width * 0.07,
-            backgroundColor: Color(0xd9d9d9ff),
+            backgroundColor: Color.fromARGB(217, 216, 216, 216),
             child: Text(
               initials,
               style: TextStyle(
