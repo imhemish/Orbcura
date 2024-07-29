@@ -6,6 +6,6 @@ class AppColors {
   static const Color white2 =
       Color.fromARGB(255, 237, 237, 237); // Change to your secondary color
   static Color grey = Colors.grey.shade600;
-  static Color border = Color(0xC6C6C6FF);
+  static Color border = Color.fromARGB(255, 192, 186, 186);
   static Color fontColour = Color(0xff434343);
 }
