@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   video_player: ^2.8.5
   google_fonts: ^6.2.1
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +71,11 @@ flutter:
     - assets/qr.png
     - assets/next.png
     - assets/home.png
+    - assets/app_logo.png
+    - assets/orbcura_name.png
+    - assets/i_button.png
+    - assets/w_button.png
+    - assets/upi_button.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
