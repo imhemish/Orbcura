@@ -15,7 +15,7 @@ class _SplashNavScreenState extends State<SplashNavScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => QrScanScreen()), // Navigate to NewScreen
+          builder: (context) => QrScanScreen()),
     );
   }
 
@@ -58,7 +58,7 @@ class _SplashNavScreenState extends State<SplashNavScreen> {
           fit: StackFit.expand,
           children: <Widget>[
             Image.asset(
-              'assets/background_splash_nav.png', // Replace with your image asset path
+              'assets/background_splash_nav.png',
               fit: BoxFit.cover,
             ),
             Column(
@@ -66,15 +66,15 @@ class _SplashNavScreenState extends State<SplashNavScreen> {
               children: <Widget>[
                 Spacer(flex: 7),
                 Image.asset(
-                  'assets/app_logo.png', // Ensure the path is correct
+                  'assets/app_logo.png',
                   width: w / 2,
                   height: h / 4,
                 ),
-                SizedBox(height: 20), // Add some space between images
+                SizedBox(height: 20),
                 InkWell(
                   onTap: _onUpiButtonTap,
                   child: Image.asset(
-                    'assets/upi_button.png', // Path to your new image
+                    'assets/upi_button.png',
                     width: w / 2,
                     height: h / 1.5,
                   ),
