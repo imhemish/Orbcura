@@ -16,14 +16,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        // home: SplashScreen(),
-        // routes: {
-        //   '/home':(context) => HomeScreen(),
-        //   // '/splash':(context) => SplashScreen(),
-        //   '/splash_nav':(context) => SplashNavScreen()
-        // },
-        home: ChatsScreen());
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
+      routes: {
+        '/home': (context) => HomeScreen(),
+        // '/splash':(context) => SplashScreen(),
+        '/splash_nav': (context) => SplashNavScreen()
+      },
+      //home: SplashNavScreen()
+    );
   }
 }
