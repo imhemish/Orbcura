@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:orbcura_app/screens/qr_scan.dart';
 import 'package:orbcura_app/widgets/four_corner_screen.dart';
 
 class SplashNavScreen extends StatefulWidget {
@@ -10,6 +11,14 @@ class SplashNavScreen extends StatefulWidget {
 }
 
 class _SplashNavScreenState extends State<SplashNavScreen> {
+  void _onUpiButtonTap() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => QrScanScreen()), // Navigate to NewScreen
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var h = MediaQuery.sizeOf(context).height;
@@ -62,10 +71,13 @@ class _SplashNavScreenState extends State<SplashNavScreen> {
                   height: h / 4,
                 ),
                 SizedBox(height: 20), // Add some space between images
-                Image.asset(
-                  'assets/upi_button.png', // Path to your new image
-                  width: w / 2,
-                  height: h / 1.5,
+                InkWell(
+                  onTap: _onUpiButtonTap,
+                  child: Image.asset(
+                    'assets/upi_button.png', // Path to your new image
+                    width: w / 2,
+                    height: h / 1.5,
+                  ),
                 ),
                 Spacer(flex: 100),
               ],
