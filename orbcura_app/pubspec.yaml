@@ -76,6 +76,8 @@ flutter:
     - assets/i_button.png
     - assets/w_button.png
     - assets/upi_button.png
+    - assets/insta_template.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
