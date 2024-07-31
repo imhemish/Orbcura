@@ -32,7 +32,8 @@ class LoginScreen extends StatelessWidget {
             "assets/login.png",
             height: h / 16,
           ),
-          () {},
+          () {Navigator.of(context)
+            .pushReplacementNamed('/splash_nav');},
         ),
 
         Center(child: Container(decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/login_background.png"), fit: BoxFit.fill)),),)
