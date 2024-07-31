@@ -72,11 +72,13 @@ flutter:
     - assets/next.png
     - assets/home.png
     - assets/app_logo.png
-    - assets/orbcura_name.png
     - assets/i_button.png
     - assets/w_button.png
     - assets/upi_button.png
     - assets/insta_template.png
+    - assets/login.png
+    - assets/account.png
+    - assets/login_background.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
