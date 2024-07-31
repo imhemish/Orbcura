@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:orbcura_app/screens/chats.dart';
 import 'package:orbcura_app/screens/home_screen.dart';
+import 'package:orbcura_app/screens/login.dart';
 import 'package:orbcura_app/screens/qr_scan.dart';
 import 'package:orbcura_app/screens/splash.dart';
 import 'package:orbcura_app/screens/splash_nav.dart';
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (context) => HomeScreen(),
         // '/splash':(context) => SplashScreen(),
-        '/splash_nav': (context) => SplashNavScreen()
+        '/splash_nav': (context) => SplashNavScreen(),
+        '/login': (context) => LoginScreen(),
       },
       //home: SplashNavScreen()
     );
