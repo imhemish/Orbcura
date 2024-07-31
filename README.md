@@ -1,6 +1,6 @@
 # Orbcura
 
-## NOTE : Prototype named as -- app-release.apk above !!
+## NOTE : Prototype named as --> app-release.apk above !!
 
 ### Brief about the Idea - Orbcura
  Orbcura is a mobile app for visually and auditorily impaired people to help them
