@@ -72,7 +72,7 @@ class ChatsScreen extends StatelessWidget {
                   Text(
                     "WhatsApp",
                     style: GoogleFonts.leagueSpartan(
-                        fontSize: 17,
+                        fontSize: 22,
                         fontWeight: FontWeight.w600,
                         color: AppColors.fontColour),
                     textAlign: TextAlign.center,
