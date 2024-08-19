@@ -2,7 +2,7 @@ class UPIDetails {
   final String payeeID;
   final num? amount;
 
-  UPIDetails(this.payeeID, this.amount);
+  UPIDetails(this.payeeID, {this.amount});
 
   factory UPIDetails.fromURI(String uri) {
     var parsed = Uri.parse(uri);
@@ -15,7 +15,7 @@ class UPIDetails {
     if (payee == null) {
       throw Exception("Does not contain a UPI ID");
     }
-    return UPIDetails(payee, null);
+    return UPIDetails(payee);
   }
 }
 
