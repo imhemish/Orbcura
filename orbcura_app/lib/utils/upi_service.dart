@@ -20,7 +20,9 @@ class UPIService {
       log = false;
     }
     () async {
-      digits = (await determineDigitsInPin()) ?? 4;
+      print("initialising digits");
+      digits = (await determineDigitsInPin()) ?? 6;
+      print("Digits "+digits.toString());
       digitsInitialised = true;
     } ();
   }
@@ -82,10 +84,14 @@ class UPIService {
   } */
 
   Future<SendMoneyResponse> sendMoneyToUpiId(String id, num amount, String pin, {String remark = '1'}) async {
-    await checkDigitsInitialised();
+    print("transferred control");
+    //await checkDigitsInitialised();
+    print("digits are initialised");
     await clearRequests();
+    
     String? req = await UssdAdvanced.multisessionUssd(code: "*99*1*3#", subscriptionId: 1);
     logIfNeeds(req ?? "No Result");
+    print("ussd request sent");
 
     if (req == null) {
       return SendMoneyResponse(false);

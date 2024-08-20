@@ -23,9 +23,9 @@ class PinBox extends StatelessWidget {
         width: 30,
         child: Center(
           child: Text(
-            number == null ? " ": number.toString(),
+            number == null ? " ": "*",
             style: GoogleFonts.leagueSpartan(
-                fontSize: 18, fontWeight: FontWeight.w400),
+                fontSize: 30, fontWeight: FontWeight.w400),
             textAlign: TextAlign.center,
           ),
         ));

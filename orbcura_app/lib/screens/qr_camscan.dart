@@ -47,7 +47,7 @@ class _QrCamScanPageState
     if (true) {
       try {
         details = UPIDetails.fromURI((barcodes.barcodes.firstOrNull?.rawValue)!);
-        Navigator.pushcontext, MaterialPageRoute(builder: (context) => ConfirmAmountPage(details!));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmAmountPage(details!)));
       } catch (e) {
         details = null;
       }
