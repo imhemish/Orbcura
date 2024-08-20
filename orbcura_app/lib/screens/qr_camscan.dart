@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:orbcura_app/screens/confirm_amount.dart';
 import 'package:orbcura_app/utils/colors.dart';
 import 'package:orbcura_app/widgets/four_corner_screen.dart';
 import 'package:orbcura_app/utils/upi_uri_parser.dart';
@@ -46,7 +47,7 @@ class _QrCamScanPageState
     if (true) {
       try {
         details = UPIDetails.fromURI((barcodes.barcodes.firstOrNull?.rawValue)!);
-        print(details.payeeID);
+        Navigator.pushcontext, MaterialPageRoute(builder: (context) => ConfirmAmountPage(details!));
       } catch (e) {
         details = null;
       }

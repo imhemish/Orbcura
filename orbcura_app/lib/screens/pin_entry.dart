@@ -1,8 +1,10 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_android_volume_keydown/flutter_android_volume_keydown.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:orbcura_app/utils/colors.dart';
+import 'package:orbcura_app/utils/upi_service.dart';
 import 'package:orbcura_app/widgets/four_corner_screen.dart';
 import 'package:orbcura_app/utils/upi_uri_parser.dart';
 
@@ -42,6 +44,30 @@ class PinEntryPage extends StatefulWidget {
 class _PinEntryPageState extends State<PinEntryPage> {
   int prefix = 0;
   List<int?> pin = [];
+  var upiService = UPIService(logging: true);
+
+  late StreamSubscription volumeSubscription;
+  void handleVolumeButton(HardwareButton button) {
+    if (button == HardwareButton.volume_up && (pin.length == widget.digits)) {
+      print("Sending money");
+      upiService.sendMoneyToUpiId(widget.details.payeeID, widget.details.amount!, pin.join("")).then((value) => print(value.name??""+ " "+(value.refID??" ")));
+    }
+    else if (button == HardwareButton.volume_up) {
+      setState(() {
+        prefix == 0 ? prefix = 5 : prefix = 0;
+      });
+    } else if (button == HardwareButton.volume_down) {
+      setState(() {
+        pin.isNotEmpty ? pin.removeLast(): null;
+      });
+  }
+  }
+  @override
+  void initState() {
+    volumeSubscription = FlutterAndroidVolumeKeydown.stream.listen(handleVolumeButton
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

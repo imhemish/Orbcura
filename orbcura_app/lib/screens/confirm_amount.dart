@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:orbcura_app/screens/pin_entry.dart';
 import 'package:orbcura_app/utils/colors.dart';
 import 'package:orbcura_app/widgets/four_corner_screen.dart';
 import 'package:orbcura_app/utils/upi_uri_parser.dart';
@@ -68,20 +69,26 @@ class ConfirmAmountPage extends StatelessWidget {
                     height: h / 2.2,
                     width: w / 2.5,
                     child: Center(
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints.loose(Size( w/4,double.infinity)),
-                          child: Text(
+                        child: InkWell(
+                          onTap: () { 
+                            details.amount = int.parse(_amountController.text);
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => PinEntryPage(details, digits: 6,)));
+                            },
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints.loose(Size( w/4,double.infinity)),
+                            child: Text(
+                              
+                                                  "Tap to confirm amount",
+                                                  style: GoogleFonts.leagueSpartan(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
                             
-                                                "Tap to confirm amount",
-                                                style: GoogleFonts.leagueSpartan(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          
-                          color: AppColors.fontColour,
-                          height: 0.8
+                            color: AppColors.fontColour,
+                            height: 0.8
+                                                  ),
+                                                  textAlign: TextAlign.center,
                                                 ),
-                                                textAlign: TextAlign.center,
-                                              ),
+                          ),
                         )),
                   )
                 ],

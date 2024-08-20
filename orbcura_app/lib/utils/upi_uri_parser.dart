@@ -1,6 +1,6 @@
 class UPIDetails {
   final String payeeID;
-  final num? amount;
+  num? amount;
 
   UPIDetails(this.payeeID, {this.amount});
 
