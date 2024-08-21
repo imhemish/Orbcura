@@ -11,7 +11,7 @@ import 'package:orbcura_app/screens/login.dart';
 import 'package:orbcura_app/screens/pin_entry.dart';
 import 'package:orbcura_app/screens/qr_camscan.dart';
 import 'package:orbcura_app/screens/qr_scan.dart';
-import 'package:orbcura_app/screens/smart_cam.dart';
+//import 'package:orbcura_app/screens/smart_cam.dart';
 import 'package:orbcura_app/screens/splash.dart';
 import 'package:orbcura_app/screens/splash_nav.dart';
 import 'package:orbcura_app/utils/upi_uri_parser.dart';
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
 
-      home: SmartCam(),
+      home: SplashScreen(),
       routes: {
         '/home': (context) => HomeScreen(),
         // '/splash':(context) => SplashScreen(),
