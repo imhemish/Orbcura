@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:orbcura_app/app_state.dart';
 import 'package:orbcura_app/widgets/four_corner_screen.dart';
+import 'package:provider/provider.dart';
 
-enum Language {hindi, english}
 
 class LanguagePage extends StatefulWidget {
   const LanguagePage({super.key});
@@ -11,9 +12,6 @@ class LanguagePage extends StatefulWidget {
 }
 
 class _LanguagePageState extends State<LanguagePage> {
-
-  // shuru mein english aayegi
-  Language lang = Language.english;
 
   @override
   Widget build(BuildContext context) {
@@ -49,15 +47,11 @@ class _LanguagePageState extends State<LanguagePage> {
         ),
 
         Center(child: Container(decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/background_splash_nav.png"), fit: BoxFit.fill)),
-          child: Center(child: GestureDetector(onTap: () {
-            setState(() {
-              if (lang == Language.english) {
-                lang = Language.hindi;
-              } else {
-                lang = Language.english;
-              }
-            });
-          }, child: Semantics(onTapHint: "change language", image: false, label: lang.name.toUpperCase()+" Language", liveRegion:true, child: Semantics(image: false, child: Image.asset("assets/orbcura_"+lang.name+".png", height: h/6,)))),),
+          child: Center(child: Consumer<AppState>(builder: (context, state, child) => 
+            InkWell(onLongPress: () {
+            state.toggleLanguage();
+            }, child: Image.asset("assets/orbcura_"+state.language.name+".png", height: h/6,)),
+          ),),
         ),)
         
     );
