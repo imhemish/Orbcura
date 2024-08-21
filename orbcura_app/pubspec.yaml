@@ -39,6 +39,9 @@ dependencies:
   google_fonts: ^6.2.1
   flutter_svg: ^2.0.10+1
   flutter_gemini: ^2.0.5
+  ussd_advanced: ^1.1.0
+  mobile_scanner: ^5.1.1
+  flutter_android_volume_keydown: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +83,8 @@ flutter:
     - assets/login.png
     - assets/account.png
     - assets/login_background.png
+    - assets/orbcura_english.png
+    - assets/orbcura_hindi.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
