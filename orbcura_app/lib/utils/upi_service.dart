@@ -1,4 +1,7 @@
+import 'package:orbcura_app/Modem.dart';
+import 'package:orbcura_app/Ussd.dart';
 import 'package:ussd_advanced/ussd_advanced.dart';
+import 'package:dbus/dbus.dart';
 
 class SendMoneyResponse {
   final bool successful;
@@ -13,12 +16,18 @@ class UPIService {
   late int digits;
   bool digitsInitialised = false;
 
+  late DBusClient client;
+  late OrgFreedesktopModemManager1ModemModem3gppUssd obj;
+
   UPIService({bool? logging}) {
     if (logging ?? false) {
       log = true;
     } else {
       log = false;
     }
+    client = DBusClient.system();
+    obj = OrgFreedesktopModemManager1ModemModem3gppUssd(client, "/org/freedesktop/ModemManager1/Modem/0");
+
     () async {
       print("initialising digits");
       digits = (await determineDigitsInPin()) ?? 6;
@@ -87,9 +96,11 @@ class UPIService {
     print("transferred control");
     //await checkDigitsInitialised();
     print("digits are initialised");
-    await clearRequests();
+    //await clearRequests();
+    await obj.callCancel();
     
-    String? req = await UssdAdvanced.multisessionUssd(code: "*99*1*3#", subscriptionId: 1);
+    //String? req = await UssdAdvanced.multisessionUssd(code: "*99*1*3#", subscriptionId: 1);
+    String? req = await obj.callInitiate("*99*1*3#");
     logIfNeeds(req ?? "No Result");
     print("ussd request sent");
 
@@ -99,7 +110,8 @@ class UPIService {
 
     if (req.contains("Enter UPI")) {
       await Future.delayed(Duration(milliseconds: 10));
-      req = await UssdAdvanced.sendMessage(id);
+      //req = await UssdAdvanced.sendMessage(id);
+      req = await obj.callRespond(id);
       logIfNeeds(req ?? "No Result");
 
       if (req == null) {
@@ -111,7 +123,8 @@ class UPIService {
       } else if (req.contains("Paying")) {
         String name = req.split("Paying ")[1].split(",")[0];
         await Future.delayed(Duration(milliseconds: 10));
-        req = await UssdAdvanced.sendMessage(amount.toString());
+        //req = await UssdAdvanced.sendMessage(amount.toString());
+        req = await obj.callRespond(amount.toString());
         logIfNeeds(req ?? "No Result");
 
         if (req == null) {
@@ -120,7 +133,8 @@ class UPIService {
 
         if (req.contains("Enter a remark")) {
           await Future.delayed(Duration(milliseconds: 10));
-          req = await UssdAdvanced.sendMessage(remark);
+          //req = await UssdAdvanced.sendMessage(remark);
+          req = await obj.callRespond(remark);
           logIfNeeds(req ?? "No Result");
 
           if (req == null) {
@@ -129,7 +143,8 @@ class UPIService {
 
           if (req.contains("You are paying to")) {
             await Future.delayed(Duration(milliseconds: 10));
-            String? output = await UssdAdvanced.sendMessage(pin);
+            //String? output = await UssdAdvanced.sendMessage(pin);
+            String? output = await obj.callRespond(pin);
             logIfNeeds(output ?? "No Result");
 
             if (output == null) {
