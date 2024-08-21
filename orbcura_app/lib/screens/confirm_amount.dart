@@ -37,7 +37,7 @@ class ConfirmAmountPage extends StatelessWidget {
         ),
         CornerChild(
           Image.asset(
-            "assets/forward.png",
+            "assets/back.png",
             height: h / 16,
           ),
           () {},
@@ -56,8 +56,30 @@ class ConfirmAmountPage extends StatelessWidget {
                     width: MediaQuery.sizeOf(context).width / 4.5,
                   ),
                   SizedBox(height: h / 20),
-                  Align(alignment: Alignment.centerLeft, child: Padding(padding: EdgeInsets.only(left: w/12), child: Text("Amount to pay", style: GoogleFonts.leagueSpartan(fontSize: 12, fontWeight: FontWeight.w400), textAlign: TextAlign.left, ))),
-                  Padding(padding: EdgeInsets.symmetric(horizontal: w/14), child: TextField(controller: _amountController, decoration: InputDecoration(constraints: BoxConstraints.loose(Size(double.infinity, h/12)), fillColor: AppColors.white, filled: true, border: OutlineInputBorder(borderSide: BorderSide(width: 1.5, color: AppColors.border), borderRadius: BorderRadius.circular(15))),)),
+                  Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                          padding: EdgeInsets.only(left: w / 12),
+                          child: Text(
+                            "Amount to pay",
+                            style: GoogleFonts.leagueSpartan(
+                                fontSize: 12, fontWeight: FontWeight.w400),
+                            textAlign: TextAlign.left,
+                          ))),
+                  Padding(
+                      padding: EdgeInsets.symmetric(horizontal: w / 14),
+                      child: TextField(
+                        controller: _amountController,
+                        decoration: InputDecoration(
+                            constraints: BoxConstraints.loose(
+                                Size(double.infinity, h / 12)),
+                            fillColor: AppColors.white,
+                            filled: true,
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 1.5, color: AppColors.border),
+                                borderRadius: BorderRadius.circular(15))),
+                      )),
                   SizedBox(
                     height: h / 12,
                   ),
@@ -70,26 +92,30 @@ class ConfirmAmountPage extends StatelessWidget {
                     width: w / 2.5,
                     child: Center(
                         child: InkWell(
-                          onTap: () { 
-                            details.amount = int.parse(_amountController.text);
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => PinEntryPage(details, digits: 6,)));
-                            },
-                          child: ConstrainedBox(
-                            constraints: BoxConstraints.loose(Size( w/4,double.infinity)),
-                            child: Text(
-                              
-                                                  "Tap to confirm amount",
-                                                  style: GoogleFonts.leagueSpartan(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            
-                            color: AppColors.fontColour,
-                            height: 0.8
-                                                  ),
-                                                  textAlign: TextAlign.center,
-                                                ),
-                          ),
-                        )),
+                      onTap: () {
+                        details.amount = int.parse(_amountController.text);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PinEntryPage(
+                                      details,
+                                      digits: 6,
+                                    )));
+                      },
+                      child: ConstrainedBox(
+                        constraints:
+                            BoxConstraints.loose(Size(w / 4, double.infinity)),
+                        child: Text(
+                          "Tap to confirm amount",
+                          style: GoogleFonts.leagueSpartan(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.fontColour,
+                              height: 0.8),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    )),
                   )
                 ],
               ),

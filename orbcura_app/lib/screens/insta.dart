@@ -32,7 +32,7 @@ class InstaScreen extends StatelessWidget {
         ),
         CornerChild(
           Image.asset(
-            "assets/forward.png",
+            "assets/back.png",
             height: h / 16,
           ),
           () {},

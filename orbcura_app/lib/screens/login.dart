@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:orbcura_app/screens/language.dart';
 import 'package:orbcura_app/widgets/four_corner_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -33,7 +34,7 @@ class LoginScreen extends StatelessWidget {
             height: h / 16,
           ),
           () {Navigator.of(context)
-            .pushReplacementNamed('/splash_nav');},
+            .push(MaterialPageRoute(builder: (context) => LanguagePage()));},
         ),
 
         Center(child: Container(decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/login_background.png"), fit: BoxFit.fill)),),)
