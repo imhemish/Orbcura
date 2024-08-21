@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:orbcura_app/screens/chats.dart';
+import 'package:orbcura_app/screens/confirm_amount.dart';
 import 'package:orbcura_app/screens/home_screen.dart';
+import 'package:orbcura_app/screens/language.dart';
 import 'package:orbcura_app/screens/login.dart';
+import 'package:orbcura_app/screens/pin_entry.dart';
+import 'package:orbcura_app/screens/qr_camscan.dart';
 import 'package:orbcura_app/screens/qr_scan.dart';
 import 'package:orbcura_app/screens/splash.dart';
 import 'package:orbcura_app/screens/splash_nav.dart';
+import 'package:orbcura_app/utils/upi_uri_parser.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown
+  ]);
   runApp(const MyApp());
 }
 
@@ -19,7 +31,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      
+      home: ConfirmAmountPage(UPIDetails("akulbhatia007@oksbi")),
       routes: {
         '/home': (context) => HomeScreen(),
         // '/splash':(context) => SplashScreen(),
