@@ -63,7 +63,7 @@ class _SplashNavScreenState extends State<SplashNavScreen> {
       ),
       CornerChild(
         Image.asset(
-          "assets/next.png",
+          "assets/forward.png",
           height: h / 16,
         ),
         () {},

@@ -37,7 +37,7 @@ class ConfirmAmountPage extends StatelessWidget {
         ),
         CornerChild(
           Image.asset(
-            "assets/next.png",
+            "assets/forward.png",
             height: h / 16,
           ),
           () {},
