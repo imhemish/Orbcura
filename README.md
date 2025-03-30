@@ -35,13 +35,17 @@ Orbcura enables visually impaired users to perform secure UPI transactions with 
 
 ## Screenshots:
 
-![orb1](https://github.com/user-attachments/assets/ca8459a9-821f-4141-a54e-8bd39039c105)
-![orb2](https://github.com/user-attachments/assets/4bfe6a89-d4a9-4fdf-a57b-6d724f64c1dd)
-![orb3](https://github.com/user-attachments/assets/fcd08082-d0ec-4dad-a28a-8fe7a060283f)
-![orb4](https://github.com/user-attachments/assets/85b78cac-19cc-4273-a388-5b7f079b4b16)
-![orb5](https://github.com/user-attachments/assets/39fc7157-6a1d-4459-83b6-1894a77e4e57)
-![orb6](https://github.com/user-attachments/assets/c431faa7-fb22-4592-8300-cf24ef07d52a)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ca8459a9-821f-4141-a54e-8bd39039c105" width="250"/>
+  <img src="https://github.com/user-attachments/assets/4bfe6a89-d4a9-4fdf-a57b-6d724f64c1dd" width="250"/>
+  <img src="https://github.com/user-attachments/assets/fcd08082-d0ec-4dad-a28a-8fe7a060283f" width="250"/>
+</p>
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/85b78cac-19cc-4273-a388-5b7f079b4b16" width="250"/>
+  <img src="https://github.com/user-attachments/assets/39fc7157-6a1d-4459-83b6-1894a77e4e57" width="250"/>
+  <img src="https://github.com/user-attachments/assets/c431faa7-fb22-4592-8300-cf24ef07d52a" width="250"/>
+</p>
 
 ## User Flow
 
