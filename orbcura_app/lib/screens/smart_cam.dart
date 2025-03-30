@@ -83,7 +83,7 @@ class _SmartCamState extends State<SmartCam> {
         text:
             "What does this show? Respond in ${pro.language} language with 3-4 lines",
         images: [b!]);
-    var p = response?.content?.parts?.firstOrNull;
+    var p = response?.content?.parts?.firstOrNull as TextPart?;
     setState(() {
       description = p?.text ?? "";
       processing = false;

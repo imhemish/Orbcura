@@ -5,7 +5,6 @@ import 'package:flutter_android_volume_keydown/flutter_android_volume_keydown.da
 import 'package:google_fonts/google_fonts.dart';
 import 'package:orbcura_app/screens/confirmation_screen.dart';
 import 'package:orbcura_app/utils/colors.dart';
-import 'package:orbcura_app/utils/upi_service.dart';
 import 'package:orbcura_app/widgets/four_corner_screen.dart';
 import 'package:orbcura_app/utils/upi_uri_parser.dart';
 import 'package:vibration/vibration.dart';
@@ -46,7 +45,7 @@ class PinEntryPage extends StatefulWidget {
 class _PinEntryPageState extends State<PinEntryPage> {
   int prefix = 0;
   List<int?> pin = [];
-  var upiService = UPIService(logging: true);
+  //var upiService = UPIService(logging: true);
 
   late StreamSubscription volumeSubscription;
   void handleVolumeButton(HardwareButton button) {
