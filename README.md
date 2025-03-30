@@ -59,7 +59,7 @@ Orbcura enables visually impaired users to perform secure UPI transactions with 
 
 ## Installation
 
-You can get the MVP from the [releases](https://github.com/imhemish/Orbcura/releases) section.
+You can get the MVP from the [releases](https://github.com/Developer-Student-Clubs-MMDU/Orbcura/releases) section.
 
 1. Clone this repository:
 
